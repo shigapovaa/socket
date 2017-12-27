@@ -4,30 +4,31 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.text.Text;
 
-import javax.xml.bind.annotation.XmlList;
+import java.util.Random;
 
 public class Controller {
-    private static Player playerOne;
-    private static Player playerTwo;
+    private Player playerOne;
+    private Player playerTwo;
     @FXML
-    private Button button00;
+    private static Button button00;
     @FXML
-    private Button button01;
+    private static Button button01;
     @FXML
-    private Button button02;
+    private static Button button02;
     @FXML
-    private Button button10;
+    private static Button button10;
     @FXML
-    private Button button11;
+    private static Button button11;
     @FXML
-    private Button button12;
+    private static Button button12;
     @FXML
-    private Button button20;
+    private static Button button20;
     @FXML
-    private Button button21;
+    private static Button button21;
     @FXML
-    private Button button22;
+    private static Button button22;
     @FXML
     private Label playerName;
     @FXML
@@ -39,9 +40,10 @@ public class Controller {
     @FXML
     private Label score2;
 
-    public void randomRabbit() {
-        int x = (int) ( Math.random() * 3 );
-        int y = (int) ( Math.random() * 3 );
+    public static void randomRabbit() {
+        Random random = new Random();
+        int x = random.nextInt(2);
+        int y = random.nextInt(2);
         if (x == 0) {
             switch (y) {
                 case 0: button00.setText("Зайка");
@@ -77,130 +79,76 @@ public class Controller {
         score2.setText("0");
     }
 
-    public void button00(ActionEvent actionEvent, Player player) {
-        int count = player.getCount();
+    public int button00(ActionEvent actionEvent) {
+        int count = 0;
         if (button00.getText().equals("Зайка")) {
             count++;
-            player.setCount(count);
-            if (player1.getText().equals(player.getName())) {
-                score1.setText("" + count);
-            }
-            else {
-                score2.setText("" + count);
-            }
         }
+        return count;
     }
 
-    public void button01(ActionEvent actionEvent, Player player) {
-        int count = player.getCount();
+    public int button01(ActionEvent actionEvent) {
+        int count = 0;
         if (button01.getText().equals("Зайка")) {
             count++;
-            player.setCount(count);
-            if (player1.getText().equals(player.getName())) {
-                score1.setText("" + count);
-            }
-            else {
-                score2.setText("" + count);
-            }
         }
+        return count;
     }
 
-    public void button02(ActionEvent actionEvent, Player player) {
-        int count = player.getCount();
+    public int button02(ActionEvent actionEvent) {
+        int count = 0;
         if (button02.getText().equals("Зайка")) {
             count++;
-            player.setCount(count);
-            if (player1.getText().equals(player.getName())) {
-                score1.setText("" + count);
-            }
-            else {
-                score2.setText("" + count);
-            }
         }
+        return count;
     }
 
-    public void button10(ActionEvent actionEvent, Player player) {
-        int count = player.getCount();
+    public int button10(ActionEvent actionEvent) {
+        int count = 0;
         if (button10.getText().equals("Зайка")) {
             count++;
-            player.setCount(count);
-            if (player1.getText().equals(player.getName())) {
-                score1.setText("" + count);
-            }
-            else {
-                score2.setText("" + count);
-            }
         }
+        return count;
     }
 
-    public void button11(ActionEvent actionEvent, Player player) {
-        int count = player.getCount();
+    public int button11(ActionEvent actionEvent) {
+        int count = 0;
         if (button11.getText().equals("Зайка")) {
             count++;
-            player.setCount(count);
-            if (player1.getText().equals(player.getName())) {
-                score1.setText("" + count);
-            }
-            else {
-                score2.setText("" + count);
-            }
         }
+        return count;
     }
 
-    public void button12(ActionEvent actionEvent, Player player) {
-        int count = player.getCount();
+    public int button12(ActionEvent actionEvent) {
+        int count = 0;
         if (button12.getText().equals("Зайка")) {
             count++;
-            player.setCount(count);
-            if (player1.getText().equals(player.getName())) {
-                score1.setText("" + count);
-            }
-            else {
-                score2.setText("" + count);
-            }
         }
+        return count;
     }
 
-    public void button20(ActionEvent actionEvent, Player player) {
-        int count = player.getCount();
+    public int button20(ActionEvent actionEvent) {
+        int count = 0;
         if (button20.getText().equals("Зайка")) {
             count++;
-            player.setCount(count);
-            if (player1.getText().equals(player.getName())) {
-                score1.setText("" + count);
-            }
-            else {
-                score2.setText("" + count);
-            }
         }
+        return count;
     }
 
-    public void button21(ActionEvent actionEvent, Player player) {
-        int count = player.getCount();
+    public int button21(ActionEvent actionEvent) {
+        int count = 0;
         if (button21.getText().equals("Зайка")) {
             count++;
-            player.setCount(count);
-            if (player1.getText().equals(player.getName())) {
-                score1.setText("" + count);
-            }
-            else {
-                score2.setText("" + count);
-            }
         }
+        return count;
     }
 
-    public void button22(ActionEvent actionEvent, Player player) {
-        int count = player.getCount();
+    public int button22(ActionEvent actionEvent) {
+        int count = 0;
         if (button22.getText().equals("Зайка")) {
             count++;
-            player.setCount(count);
-            if (player1.getText().equals(player.getName())) {
-                score1.setText("" + count);
-            }
-            else {
-                score2.setText("" + count);
-            }
         }
+        return count;
     }
 
     public void setPlayerNameToLabel(Player player) {
@@ -208,15 +156,9 @@ public class Controller {
     }
 
     public void main(String[] args) {
-        playerOne.setName("A");
-        playerTwo.setName("B");
-        //Вместо PlayerOne нужно будет поставить пользователя, который играет
-        setPlayerNameToLabel(playerOne);
 
-        sendPlayer1Info(playerOne);
-        sendPlayer2Info(playerTwo);
 
-        randomRabbit();
+        //randomRabbit();
     }
 
 }
