@@ -24,7 +24,10 @@ public class Main extends Application {
     }
 
 
-    public static void main(String[] args) {
+    public void main(String[] args) {
+        Player player1 = new Player("A");
+
+
         launch(args);
     }
 }
